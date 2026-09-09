@@ -206,13 +206,12 @@ const Home = () => {
         {/* NAVBAR CTA */}
 
         <button
-          className="home-nav-cta"
-          onClick={() => handleNavigation("contact")}
-          type="button"
-        >
-          Join the Club
-          <span>↗</span>
-        </button>
+  className="home-nav-cta"
+  onClick={() => handleNavigation("contact")}
+  aria-label="Contact"
+>
+  💌
+</button>
 
       </header>
 
