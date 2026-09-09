@@ -1,0 +1,1609 @@
+/* =========================================
+   HOME.CSS
+========================================= */
+
+@import url(
+  "https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+);
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: #e8a4bc;
+}
+
+button {
+  font: inherit;
+}
+
+:root {
+  --pink: #e8a4bc;
+  --light-pink: #f4ceda;
+  --deep-pink: #a93c64;
+  --wine: #6f213d;
+  --cream: #fff8f2;
+  --line: rgba(111, 33, 61, 0.14);
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.home-navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 3rem;
+
+  background: rgba(255, 248, 242, 0.92);
+
+  backdrop-filter: blur(15px);
+
+  border-bottom: 1px solid
+    rgba(111, 33, 61, 0.12);
+
+  /*
+     Navbar stays above the travelling
+     hero logo when the logo reaches it.
+  */
+  z-index: 1100;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu-trigger {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  border: none;
+  background: transparent;
+
+  color: var(--wine);
+
+  cursor: pointer;
+
+  padding: 10px 0;
+}
+
+.menu-lines {
+  width: 27px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.menu-lines span {
+  width: 100%;
+  height: 1px;
+
+  background: var(--wine);
+}
+
+.menu-lines span:last-child {
+  width: 18px;
+}
+
+.menu-text {
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* =========================================
+   NAV LOGO
+========================================= */
+
+.navbar-logo-space {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.nav-logo {
+  display: block;
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  color: var(--wine);
+
+  font-size: 1.55rem;
+
+  opacity: 0;
+
+  transform:
+    translateY(5px);
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+
+  white-space: nowrap;
+}
+
+.nav-logo.visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================
+   NAV CTA
+========================================= */
+
+.home-nav-cta {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border: none;
+  border-radius: 100px;
+
+  padding: 11px 21px;
+
+  background: var(--wine);
+
+  color: var(--cream);
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 0.66rem;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.home-nav-cta:hover {
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================
+   SIDEBAR OVERLAY
+========================================= */
+
+.sidebar-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(55, 10, 30, 0.35);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    0.35s ease;
+
+  z-index: 2000;
+}
+
+.sidebar-overlay.show {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.website-sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width:
+    min(440px, 92vw);
+
+  height: 100vh;
+
+  padding:
+    2rem 3rem;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    var(--wine);
+
+  color:
+    var(--cream);
+
+  transform:
+    translateX(-105%);
+
+  transition:
+    transform
+    0.6s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+
+  z-index: 3000;
+}
+
+.website-sidebar.open {
+  transform:
+    translateX(0);
+}
+
+.sidebar-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.sidebar-brand {
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    1.8rem;
+}
+
+.sidebar-brand span {
+  margin-left: 8px;
+}
+
+.sidebar-close {
+  border: none;
+
+  background: transparent;
+
+  color: var(--cream);
+
+  font-size:
+    2.3rem;
+
+  cursor: pointer;
+}
+
+.sidebar-navigation {
+  display: flex;
+
+  flex-direction: column;
+
+  margin:
+    auto 0;
+}
+
+.sidebar-link {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 18px;
+
+  width: 100%;
+
+  padding:
+    18px 0;
+
+  border: none;
+
+  border-bottom:
+    1px solid
+    rgba(255, 248, 242, 0.18);
+
+  background: transparent;
+
+  color:
+    var(--cream);
+
+  text-align: left;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(
+      1.8rem,
+      4vw,
+      3rem
+    );
+
+  cursor: pointer;
+
+  transition:
+    padding 0.25s ease;
+}
+
+.sidebar-link:hover {
+  padding-left:
+    14px;
+
+  color:
+    #f3b6ca;
+}
+
+.sidebar-link span {
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size:
+    0.58rem;
+
+  color:
+    #f3b6ca;
+}
+
+.sidebar-bottom {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-end;
+}
+
+.sidebar-bottom p {
+  width: 190px;
+
+  font-size:
+    0.8rem;
+
+  line-height:
+    1.7;
+
+  opacity:
+    0.75;
+}
+
+.sidebar-flower {
+  font-size:
+    4rem;
+
+  color:
+    #f3b6ca;
+}
+
+
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home-page {
+  width: 100%;
+
+  background:
+    var(--pink);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.logo-stage {
+  position: relative;
+
+  width: 100%;
+
+  height: 100vh;
+
+  min-height: 620px;
+
+  overflow: hidden;
+
+  background-position:
+    center;
+
+  background-size:
+    cover;
+
+  background-repeat:
+    no-repeat;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.home-grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity:
+    0.34;
+
+  background-image:
+    linear-gradient(
+      rgba(111, 33, 61, 0.07)
+      1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(111, 33, 61, 0.07)
+      1px,
+      transparent 1px
+    );
+
+  background-size:
+    80px 80px;
+
+  mask-image:
+    radial-gradient(
+      circle at center,
+      black 5%,
+      transparent 82%
+    );
+}
+
+
+/* =========================================
+   BACKGROUND SHAPES
+========================================= */
+
+.home-shape {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(111, 33, 61, 0.13);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.shape-one {
+  width: 510px;
+
+  height: 510px;
+
+  left: -240px;
+
+  top: 16%;
+}
+
+.shape-two {
+  width: 275px;
+
+  height: 275px;
+
+  right: -70px;
+
+  top: 23%;
+
+  background:
+    rgba(255, 248, 242, 0.12);
+}
+
+.shape-three {
+  width: 205px;
+
+  height: 205px;
+
+  right: 18%;
+
+  bottom: 10%;
+}
+
+
+/* =========================================
+   VERTICAL TEXT
+========================================= */
+
+.vertical-text {
+  position: absolute;
+
+  top: 50%;
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size:
+    0.53rem;
+
+  letter-spacing:
+    0.3em;
+
+  color:
+    rgba(111, 33, 61, 0.42);
+}
+
+.left-text {
+  left: 20px;
+
+  transform:
+    translateY(-50%)
+    rotate(-90deg);
+}
+
+.right-text {
+  right: 20px;
+
+  transform:
+    translateY(-50%)
+    rotate(90deg);
+}
+
+
+/* =========================================
+   CREATIVE UNIVERSE
+========================================= */
+
+.creative-universe {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 4;
+}
+
+
+/* =========================================
+   ORBITS
+========================================= */
+
+.orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 47%;
+
+  border:
+    1px solid
+    rgba(111, 33, 61, 0.12);
+
+  border-radius: 50%;
+}
+
+.orbit-one {
+  width: 430px;
+
+  height: 430px;
+
+  transform:
+    translate(-50%, -50%);
+
+  animation:
+    orbitRotate
+    28s
+    linear
+    infinite;
+}
+
+.orbit-two {
+  width: 580px;
+
+  height: 290px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-18deg);
+}
+
+
+/* =========================================
+   FLOATING ELEMENTS
+========================================= */
+
+.floating-flower,
+.floating-spark,
+.floating-heart {
+  position: absolute;
+
+  color:
+    var(--wine);
+}
+
+.flower-one {
+  left: 24%;
+
+  bottom: 21%;
+
+  font-size:
+    2.5rem;
+
+  color:
+    #d9789c;
+
+  animation:
+    flowerFloat
+    6s
+    ease-in-out
+    infinite;
+}
+
+.flower-two {
+  right: 24%;
+
+  bottom: 23%;
+
+  font-size:
+    2rem;
+
+  color:
+    #8a9b79;
+
+  animation:
+    flowerFloat
+    7s
+    ease-in-out
+    infinite reverse;
+}
+
+.spark-one {
+  left: 43%;
+
+  top: 21%;
+
+  font-size:
+    2.3rem;
+
+  color:
+    #a93c64;
+
+  animation:
+    sparkle
+    4s
+    ease-in-out
+    infinite;
+}
+
+.spark-two {
+  right: 38%;
+
+  bottom: 24%;
+
+  font-size:
+    1.8rem;
+
+  color:
+    var(--cream);
+
+  animation:
+    sparkle
+    5s
+    ease-in-out
+    infinite;
+}
+
+.floating-heart {
+  right: 16%;
+
+  top: 55%;
+
+  font-size:
+    2.9rem;
+
+  color:
+    rgba(111, 33, 61, 0.55);
+
+  animation:
+    heartFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================
+   MAIN THHGC LOGO
+========================================= */
+
+.thhgc-logo {
+  position: fixed;
+
+  left: 50%;
+
+  /*
+     Initial position.
+     React changes this value during
+     scrolling so the logo travels
+     toward the navbar.
+  */
+  top: 43vh;
+
+  width:
+    min(760px, 88vw);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 1001;
+
+  pointer-events: none;
+
+  transform-origin:
+    center center;
+
+  will-change:
+    transform,
+    top,
+    opacity;
+
+  transition:
+    opacity 0.18s linear;
+}
+
+
+/* =========================================
+   LOGO TEXT
+========================================= */
+
+.logo-main-text {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  color:
+    var(--cream);
+
+  text-shadow:
+    0 10px 35px
+    rgba(111, 33, 61, 0.18);
+}
+
+.logo-main-text span {
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    clamp(
+      3.2rem,
+      6.5vw,
+      5.7rem
+    );
+
+  line-height:
+    0.72;
+
+  margin-bottom:
+    0.2em;
+}
+
+.logo-main-text strong {
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-weight:
+    400;
+
+  font-size:
+    clamp(
+      3.3rem,
+      7.5vw,
+      6.6rem
+    );
+
+  line-height:
+    0.88;
+}
+
+
+/* =========================================
+   SPACING BETWEEN LOGO LINES
+========================================= */
+
+.logo-main-text strong + strong {
+  margin-top:
+    0.2em;
+}
+
+
+/* =========================================
+   EST 2025
+========================================= */
+
+.logo-est {
+  margin-top:
+    0.8rem;
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size:
+    0.55rem;
+
+  letter-spacing:
+    0.34em;
+
+  color:
+    var(--cream);
+
+  opacity:
+    0.9;
+}
+
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.home-intro {
+  position: absolute;
+
+  left: 50%;
+
+  top: 67%;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  width:
+    max-content;
+
+  max-width:
+    90vw;
+
+  color:
+    var(--wine);
+
+  z-index: 20;
+}
+
+.home-intro p {
+  margin: 0;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(
+      0.8rem,
+      1.2vw,
+      1rem
+    );
+
+  font-style:
+    italic;
+
+  white-space:
+    nowrap;
+
+  text-align:
+    center;
+}
+
+.intro-line {
+  width:
+    38px;
+
+  height:
+    1px;
+
+  background:
+    rgba(111, 33, 61, 0.45);
+
+  flex-shrink:
+    0;
+}
+
+
+/* =========================================
+   FILM STRIP
+========================================= */
+
+.moving-images-wrapper {
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 54px;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  z-index: 30;
+}
+
+
+/* =========================================
+   FILM STRIP BODY
+========================================= */
+
+.film-strip {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    13px 0;
+
+  background:
+    #572038;
+
+  border-top:
+    2px solid
+    rgba(255, 248, 242, 0.85);
+
+  border-bottom:
+    2px solid
+    rgba(255, 248, 242, 0.85);
+
+  overflow:
+    hidden;
+}
+
+
+/* =========================================
+   FILM PERFORATIONS
+========================================= */
+
+.film-holes {
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 7px;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to right,
+      #f7dce4 0,
+      #f7dce4 13px,
+      transparent 13px,
+      transparent 30px
+    );
+}
+
+.top-holes {
+  top: 3px;
+}
+
+.bottom-holes {
+  bottom: 3px;
+}
+
+
+/* =========================================
+   MOVING IMAGES
+========================================= */
+
+.moving-images {
+  display: flex;
+
+  width:
+    max-content;
+
+  padding:
+    0 8px;
+
+  animation:
+    moveFilmStrip
+    38s
+    linear
+    infinite;
+}
+
+
+/* =========================================
+   FILM FRAME
+========================================= */
+
+.film-frame {
+  position: relative;
+
+  width:
+    175px;
+
+  height:
+    118px;
+
+  flex-shrink:
+    0;
+
+  padding:
+    9px 7px;
+
+  background:
+    #572038;
+
+  border-left:
+    1px solid
+    rgba(255, 248, 242, 0.25);
+
+  border-right:
+    1px solid
+    rgba(255, 248, 242, 0.25);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.film-frame-image {
+  width: 100%;
+
+  height: 100%;
+
+  overflow:
+    hidden;
+
+  background:
+    var(--cream);
+}
+
+.film-frame img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.film-frame:hover img {
+  transform:
+    scale(1.04);
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 13px;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 6px;
+
+  z-index: 40;
+}
+
+.scroll-indicator span {
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size:
+    0.45rem;
+
+  letter-spacing:
+    0.22em;
+
+  color:
+    var(--wine);
+
+  white-space:
+    nowrap;
+}
+
+.scroll-line {
+  width: 1px;
+
+  height:
+    23px;
+
+  background:
+    rgba(111, 33, 61, 0.5);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes moveFilmStrip {
+
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%);
+  }
+}
+
+
+@keyframes flowerFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-15px)
+      rotate(12deg);
+  }
+}
+
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    transform:
+      scale(1)
+      rotate(0deg);
+
+    opacity:
+      0.7;
+  }
+
+  50% {
+    transform:
+      scale(1.35)
+      rotate(20deg);
+
+    opacity:
+      1;
+  }
+}
+
+
+@keyframes heartFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-18px);
+  }
+}
+
+
+@keyframes orbitRotate {
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .home-navbar {
+    height:
+      66px;
+
+    padding:
+      0 1.2rem;
+  }
+
+
+  .menu-text {
+    display:
+      none;
+  }
+
+
+  .nav-logo {
+    font-size:
+      1.05rem;
+  }
+
+
+  .home-nav-cta {
+    padding:
+      10px 14px;
+
+    font-size:
+      0.56rem;
+  }
+
+
+  .website-sidebar {
+    padding:
+      1.5rem;
+  }
+
+
+  .vertical-text {
+    display:
+      none;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE ORBITS
+  ----------------------------------------- */
+
+  .orbit-one {
+    width:
+      280px;
+
+    height:
+      280px;
+  }
+
+
+  .orbit-two {
+    width:
+      370px;
+
+    height:
+      180px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE LOGO
+  ----------------------------------------- */
+
+  /*
+     Do NOT set top here.
+
+     The React inline style controls the
+     travelling logo position on mobile too.
+  */
+
+  .thhgc-logo {
+    width:
+      96vw;
+  }
+
+
+  .logo-main-text span {
+    font-size:
+      3.2rem;
+  }
+
+
+  .logo-main-text strong {
+    font-size:
+      3.55rem;
+  }
+
+
+  .logo-est {
+    margin-top:
+      0.7rem;
+
+    font-size:
+      0.45rem;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE TAGLINE
+     
+     IMPORTANT:
+     Keep the entire tagline group centered.
+  ----------------------------------------- */
+
+  .home-intro {
+    left:
+      50%;
+
+    top:
+      65%;
+
+    width:
+      100%;
+
+    max-width:
+      none;
+
+    padding:
+      0 18px;
+
+    display:
+      flex;
+
+    flex-direction:
+      row;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    gap:
+      10px;
+
+    transform:
+      translateX(-50%);
+
+    box-sizing:
+      border-box;
+  }
+
+
+  .home-intro p {
+    flex:
+      0 1 auto;
+
+    width:
+      auto;
+
+    max-width:
+      275px;
+
+    margin:
+      0;
+
+    padding:
+      0;
+
+    text-align:
+      center;
+
+    white-space:
+      normal;
+
+    font-size:
+      0.72rem;
+
+    line-height:
+      1.45;
+  }
+
+
+  .intro-line {
+    width:
+      18px;
+
+    min-width:
+      18px;
+
+    flex-shrink:
+      0;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE FILM STRIP
+  ----------------------------------------- */
+
+  .moving-images-wrapper {
+    bottom:
+      48px;
+  }
+
+
+  .film-frame {
+    width:
+      130px;
+
+    height:
+      88px;
+
+    padding:
+      7px 5px;
+  }
+
+
+  .film-holes {
+    height:
+      6px;
+
+    background:
+      repeating-linear-gradient(
+        to right,
+        #f7dce4 0,
+        #f7dce4 10px,
+        transparent 10px,
+        transparent 24px
+      );
+  }
+
+
+  /* -----------------------------------------
+     MOBILE SCROLL INDICATOR
+  ----------------------------------------- */
+
+  .scroll-indicator {
+    bottom:
+      8px;
+  }
+
+
+  .scroll-indicator span {
+    font-size:
+      0.4rem;
+
+    letter-spacing:
+      0.18em;
+  }
+
+
+  .scroll-line {
+    height:
+      20px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 390px) {
+
+  .home-intro {
+    top:
+      64%;
+
+    padding:
+      0 12px;
+
+    gap:
+      7px;
+  }
+
+
+  .home-intro p {
+    max-width:
+      235px;
+
+    font-size:
+      0.67rem;
+
+    line-height:
+      1.4;
+  }
+
+
+  .intro-line {
+    width:
+      14px;
+
+    min-width:
+      14px;
+  }
+
+
+  /*
+     Again, don't override the travelling
+     logo's top position here.
+  */
+
+  .thhgc-logo {
+    width:
+      96vw;
+  }
+
+
+  .logo-main-text span {
+    font-size:
+      2.9rem;
+  }
+
+
+  .logo-main-text strong {
+    font-size:
+      3.2rem;
+  }
+
+
+  .logo-est {
+    margin-top:
+      0.55rem;
+
+    font-size:
+      0.4rem;
+  }
+}

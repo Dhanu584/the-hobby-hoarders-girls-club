@@ -1,0 +1,779 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Great+Vibes&family=Playfair+Display:wght@400;500&display=swap");
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+.contact-page {
+  --pink: #E998B1;
+  --cream: #FFF8F2;
+  --paper: #FFF1D5;
+  --wine: #6F213D;
+  --deep-wine: #59152F;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--cream);
+  color: var(--wine);
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  padding: 55px 30px 70px;
+
+  box-sizing: border-box;
+
+  /*
+    Pink + cream vertical stripes
+    inspired by the reference
+  */
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--pink) 0px,
+      var(--pink) 34px,
+      var(--cream) 34px,
+      var(--cream) 43px
+    );
+}
+
+
+/* =========================================================
+   PAPER / FORM CARD
+========================================================= */
+
+.contact-paper {
+  width: 500px;
+  min-height: 470px;
+
+  background: var(--paper);
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding: 48px 68px;
+
+  /*
+    Very subtle paper shadow
+  */
+  box-shadow:
+    0 12px 30px rgba(89, 21, 47, 0.10);
+
+  transform: rotate(-0.3deg);
+}
+
+
+/*
+  Very subtle paper texture
+*/
+
+.contact-paper::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.22;
+
+  background-image:
+    radial-gradient(
+      rgba(111, 33, 61, 0.10) 0.6px,
+      transparent 0.6px
+    );
+
+  background-size: 6px 6px;
+}
+
+
+/* =========================================================
+   PAPER CONTENT
+========================================================= */
+
+.contact-paper-content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Small heading */
+
+.contact-small-title {
+  margin: 0 0 10px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+
+  text-align: center;
+
+  color: rgba(89, 21, 47, 0.62);
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.contact-title {
+  margin: 0;
+
+  font-family: "Great Vibes", cursive;
+
+  font-size: 56px;
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: var(--deep-wine);
+
+  text-align: center;
+}
+
+
+/* Subtitle */
+
+.contact-subtitle {
+  margin: 13px 0 31px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  text-align: center;
+
+  color: rgba(89, 21, 47, 0.72);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contact-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Field */
+
+.contact-field {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+
+
+/* Label */
+
+.contact-field label {
+  margin-bottom: 5px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+  font-weight: 400;
+
+  color: var(--wine);
+
+  text-transform: lowercase;
+}
+
+
+/* Inputs */
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: none;
+  border-bottom: 1px solid rgba(111, 33, 61, 0.32);
+
+  outline: none;
+
+  background: transparent;
+
+  padding: 5px 0;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 12px;
+
+  color: var(--wine);
+}
+
+
+/* Remove textarea resize */
+
+.contact-field textarea {
+  resize: none;
+
+  min-height: 45px;
+}
+
+
+/* Focus */
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-bottom-color: var(--wine);
+}
+
+
+/* Message spacing */
+
+.contact-message-field {
+  margin-bottom: 23px;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.contact-submit {
+  align-self: center;
+
+  border: 1px solid var(--wine);
+
+  background: transparent;
+
+  color: var(--wine);
+
+  padding: 9px 27px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.05em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.contact-submit:hover {
+  background: var(--wine);
+
+  color: var(--paper);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+.contact-instagram {
+  margin-top: 22px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  color: var(--wine);
+
+  text-decoration: none;
+
+  letter-spacing: 0.02em;
+
+  transition: opacity 0.2s ease;
+}
+
+
+.contact-instagram:hover {
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.contact-footer {
+  width: 100%;
+
+  background: var(--cream);
+
+  color: var(--wine);
+
+  padding: 48px 7vw 28px;
+
+  box-sizing: border-box;
+}
+
+
+/* Footer top */
+
+.footer-top {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.footer-brand-script {
+  font-family: "Great Vibes", cursive;
+
+  font-size: 34px;
+
+  line-height: 0.9;
+
+  color: var(--wine);
+}
+
+
+.footer-brand-small {
+  margin-top: 7px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  color: rgba(111, 33, 61, 0.65);
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.footer-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+
+.footer-links a {
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: var(--wine);
+
+  text-decoration: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.footer-links a:hover {
+  opacity: 0.55;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER LINE
+========================================================= */
+
+.footer-line {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 25px 0 17px;
+
+  background: rgba(111, 33, 61, 0.18);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 6.5px;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: rgba(111, 33, 61, 0.52);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .contact-section {
+    min-height: auto;
+
+    padding: 45px 20px 55px;
+
+    background:
+      repeating-linear-gradient(
+        90deg,
+        var(--pink) 0px,
+        var(--pink) 30px,
+        var(--cream) 30px,
+        var(--cream) 38px
+      );
+  }
+
+
+  .contact-paper {
+    width: 460px;
+
+    min-height: 450px;
+
+    padding: 42px 58px;
+  }
+
+
+  .contact-title {
+    font-size: 51px;
+  }
+
+
+  .footer-top {
+    align-items: flex-start;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .contact-section {
+    padding: 30px 12px 45px;
+
+    background:
+      repeating-linear-gradient(
+        90deg,
+        var(--pink) 0px,
+        var(--pink) 25px,
+        var(--cream) 25px,
+        var(--cream) 32px
+      );
+  }
+
+
+  .contact-paper {
+    width: min(90vw, 430px);
+
+    min-height: 430px;
+
+    padding: 38px 40px;
+  }
+
+
+  .contact-small-title {
+    font-size: 7px;
+
+    margin-bottom: 9px;
+  }
+
+
+  .contact-title {
+    font-size: 45px;
+  }
+
+
+  .contact-subtitle {
+    font-size: 10px;
+
+    margin-top: 11px;
+    margin-bottom: 27px;
+  }
+
+
+  .contact-field {
+    margin-bottom: 17px;
+  }
+
+
+  .contact-field label {
+    font-size: 9px;
+  }
+
+
+  .contact-field input,
+  .contact-field textarea {
+    font-size: 11px;
+  }
+
+
+  .contact-message-field {
+    margin-bottom: 20px;
+  }
+
+
+  .contact-submit {
+    padding: 8px 23px;
+
+    font-size: 8px;
+  }
+
+
+  .contact-instagram {
+    margin-top: 19px;
+
+    font-size: 7px;
+
+    text-align: center;
+  }
+
+
+  /* Footer */
+
+  .contact-footer {
+    padding: 38px 22px 24px;
+  }
+
+
+  .footer-top {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 25px;
+  }
+
+
+  .footer-brand {
+    align-items: center;
+  }
+
+
+  .footer-brand-script {
+    font-size: 31px;
+  }
+
+
+  .footer-links {
+    gap: 22px;
+  }
+
+
+  .footer-links a {
+    font-size: 7px;
+  }
+
+
+  .footer-line {
+    margin: 23px 0 14px;
+  }
+
+
+  .footer-bottom {
+    flex-direction: column;
+
+    gap: 7px;
+
+    text-align: center;
+  }
+
+
+  .footer-bottom p {
+    font-size: 5.5px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .contact-section {
+    padding: 25px 10px 40px;
+  }
+
+
+  .contact-paper {
+    width: 90vw;
+
+    min-height: 390px;
+
+    padding: 31px 28px;
+  }
+
+
+  .contact-small-title {
+    font-size: 6px;
+  }
+
+
+  .contact-title {
+    font-size: 39px;
+  }
+
+
+  .contact-subtitle {
+    font-size: 8.5px;
+
+    margin-bottom: 23px;
+  }
+
+
+  .contact-field {
+    margin-bottom: 14px;
+  }
+
+
+  .contact-field label {
+    font-size: 8px;
+  }
+
+
+  .contact-field input,
+  .contact-field textarea {
+    font-size: 10px;
+
+    padding: 4px 0;
+  }
+
+
+  .contact-message-field {
+    margin-bottom: 17px;
+  }
+
+
+  .contact-submit {
+    padding: 7px 20px;
+
+    font-size: 7px;
+  }
+
+
+  .contact-instagram {
+    margin-top: 16px;
+
+    font-size: 6px;
+  }
+
+
+  .contact-footer {
+    padding: 32px 15px 20px;
+  }
+
+
+  .footer-brand-script {
+    font-size: 28px;
+  }
+
+
+  .footer-brand-small {
+    font-size: 6px;
+  }
+
+
+  .footer-links {
+    gap: 17px;
+  }
+
+
+  .footer-links a {
+    font-size: 6px;
+  }
+
+
+  .footer-bottom p {
+    font-size: 5px;
+  }
+}
