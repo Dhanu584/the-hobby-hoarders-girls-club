@@ -210,7 +210,7 @@ const Home = () => {
   onClick={() => handleNavigation("contact")}
   aria-label="Contact"
 >
-  💌
+  ✉
 </button>
 
       </header>
