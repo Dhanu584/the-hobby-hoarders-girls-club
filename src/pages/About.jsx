@@ -82,13 +82,13 @@ const About = () => {
         className="about-intro-section about-reveal"
         ref={addToRefs}
       >
-          <div className="about-top-decoration">
-  <span className="about-top-line"></span>
-  <span className="about-spark spark-left">✦</span>
-  <span className="about-spark spark-mid">✧</span>
-  <span className="about-spark spark-right">✦</span>
-  <span className="about-top-dot"></span>
-</div>
+        <div className="about-top-decoration">
+          <span className="about-top-line"></span>
+          <span className="about-spark spark-left">✦</span>
+          <span className="about-spark spark-mid">✧</span>
+          <span className="about-spark spark-right">✦</span>
+          <span className="about-top-dot"></span>
+        </div>
 
         <div className="about-section-number">
           01 / OUR STORY
@@ -287,9 +287,6 @@ const About = () => {
         </div>
 
       </section>
-
-
-     
 
     </main>
   );

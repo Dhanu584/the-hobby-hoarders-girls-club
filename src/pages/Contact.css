@@ -28,7 +28,7 @@
 
 .contact-section {
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
 
   display: flex;
   align-items: center;
@@ -39,6 +39,8 @@
   padding: 55px 30px 70px;
 
   box-sizing: border-box;
+
+  border-bottom: 3px solid var(--pink);
 
   /*
     Pink + cream vertical stripes
@@ -347,7 +349,7 @@
 
   color: var(--wine);
 
-  padding: 48px 7vw 28px;
+  padding: 30px 7vw 18px;
 
   box-sizing: border-box;
 }
@@ -453,7 +455,7 @@
 
   height: 1px;
 
-  margin: 25px 0 17px;
+  margin: 18px 0 12px;
 
   background: rgba(111, 33, 61, 0.18);
 }
@@ -495,7 +497,7 @@
 @media (max-width: 800px) {
 
   .contact-section {
-    min-height: auto;
+    min-height: 100vh;
 
     padding: 45px 20px 55px;
 
@@ -537,6 +539,8 @@
 @media (max-width: 600px) {
 
   .contact-section {
+    min-height: 100vh;
+
     padding: 30px 12px 45px;
 
     background:
@@ -619,7 +623,7 @@
   /* Footer */
 
   .contact-footer {
-    padding: 38px 22px 24px;
+    padding: 24px 22px 14px;
   }
 
 
@@ -630,7 +634,7 @@
 
     text-align: center;
 
-    gap: 25px;
+    gap: 15px;
   }
 
 
@@ -655,14 +659,14 @@
 
 
   .footer-line {
-    margin: 23px 0 14px;
+    margin: 16px 0 10px;
   }
 
 
   .footer-bottom {
     flex-direction: column;
 
-    gap: 7px;
+    gap: 5px;
 
     text-align: center;
   }
@@ -681,6 +685,8 @@
 @media (max-width: 390px) {
 
   .contact-section {
+    min-height: 100vh;
+
     padding: 25px 10px 40px;
   }
 
@@ -749,7 +755,7 @@
 
 
   .contact-footer {
-    padding: 32px 15px 20px;
+    padding: 20px 15px 12px;
   }
 
 

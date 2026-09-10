@@ -1780,13 +1780,15 @@
 
 
   .founder-note {
-    right: -15px;
+    right: 4px;
 
     bottom: 8px;
 
     padding: 7px 9px;
 
     font-size: 0.72rem;
+
+    z-index: 5;
   }
 
 
@@ -1873,6 +1875,11 @@
 ========================================= */
 
 @media (max-width: 390px) {
+
+  .founder-note {
+    right: 3px;
+    bottom: 6px;
+  }
 
   .about-nav-logo {
     font-size: 0.82rem;
