@@ -28,6 +28,7 @@ const images = [
 const Home = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoReady, setLogoReady] = useState(false);
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
@@ -59,6 +60,18 @@ const Home = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  /* =================================
+     INITIAL LOGO ENTRANCE
+  ================================= */
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLogoReady(true);
+    }, 700);
+
+    return () => clearTimeout(timer);
   }, []);
 
   /* =================================
@@ -453,10 +466,10 @@ const Home = () => {
           ================================= */}
 
           <div
-            className="thhgc-logo"
+            className={`thhgc-logo ${logoReady ? "logo-ready" : ""}`}
             style={{
               ...logoStyle,
-              opacity: logoOpacity,
+              opacity: logoReady ? logoOpacity : 0,
             }}
           >
 

@@ -796,6 +796,19 @@ button {
 
 
 /* =========================================
+   INITIAL LOGO ENTRANCE
+========================================= */
+
+.thhgc-logo.logo-ready .logo-main-text {
+  animation:
+    logoEntrance
+    1s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+
+/* =========================================
    LOGO TEXT
 ========================================= */
 
@@ -1196,6 +1209,27 @@ button {
    ANIMATIONS
 ========================================= */
 
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform:
+      translateY(32px)
+      scale(0.86);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
 @keyframes moveFilmStrip {
 
   from {
@@ -1286,7 +1320,10 @@ button {
       66px;
 
     padding:
-      0 1.2rem;
+      0 14px;
+
+    overflow:
+      hidden;
   }
 
 
@@ -1296,18 +1333,75 @@ button {
   }
 
 
+  .navbar-logo-space {
+    width:
+      140px;
+
+    max-width:
+      calc(100% - 135px);
+
+    overflow:
+      hidden;
+
+    display:
+      flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+  }
+
+
   .nav-logo {
+    width:
+      100%;
+
     font-size:
-      1.05rem;
+      0.9rem;
+
+    line-height:
+      1;
+
+    white-space:
+      nowrap;
+
+    overflow:
+      hidden;
+
+    text-align:
+      center;
   }
 
 
   .home-nav-cta {
+    width:
+      42px;
+
+    height:
+      42px;
+
     padding:
-      10px 14px;
+      0;
 
     font-size:
-      0.56rem;
+      1.35rem;
+
+    line-height:
+      1;
+
+    display:
+      flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    flex-shrink:
+      0;
   }
 
 
