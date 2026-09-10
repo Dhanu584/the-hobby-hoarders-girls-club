@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
 
-import image01 from "../assets/image01.png";
+import image01 from "../assets/image02.png";
 
 import img01 from "../assets/img01.jpg";
 import img02 from "../assets/img02.jpg";
